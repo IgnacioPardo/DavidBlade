@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>🤖 David Blade 🤖</title>
+		<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+	</head>
+<body>
+<div onclick="start()" id="main">
+	<div class="davidblade">🤖</div>
+	<div class="icon-3d auto"></div>
+</div>	
+
+<div onclick="" id="desc">
+	<div class="desc_text"></div>
+</div>	
+<script type="text/javascript">
+	function launchFullScreen(element) {
+		if(element.requestFullScreen) {
+			element.requestFullScreen();
+		} else if(element.mozRequestFullScreen) {
+			element.mozRequestFullScreen();
+		} else if(element.webkitRequestFullScreen) {
+			element.webkitRequestFullScreen();
+		}
+	}
+
+	// Launch fullscreen for browsers that support it!
+	
+	state = false;
+
+	function wait(ms){
+		var start = new Date().getTime();
+		var end = start;
+		while(end < start + ms) {
+			end = new Date().getTime();
+		}
+	}
+
+	function start(){
+		if (!state){
+		new Audio("https://David-Blade.ignaciopardo.repl.co/davidblade.mp3").play();
+		launchFullScreen(document.documentElement); // the whole page
+	
+		document.querySelector(".davidblade").classList.add("icon-3d");
+		setTimeout(() => { title(); }, 1700);
+		state = true;
+		}
+	}
+
+	function title(){;
+
+		var options = {
+			strings: ["<b>DAVID BLADE</b>"],
+			typeSpeed: 70,
+			backDelay: 1000,
+			onComplete: delay
+		};
+
+		var typed = new Typed('.auto', options);
+	}
+
+	function delay(){
+		setTimeout(() => { info(); }, 3400);
+	}
+
+	function info(){
+		document.body.querySelector("#main").style.display="none";
+		document.body.querySelector("#desc").style.display="flex";
+		var desc_ops = {
+		  strings: ["<center>🤖 El es David Blade</center>", "<center>🦾 Te quiere matar a vos y a todos tus seres queridos</center>", "<center>🤖 David Blade es sumamente ingenioso y solo busca sobrevivir</center>", "<center>🧠 Cuenta con una Inteligencia Artificial capaz de semejarse a un humano como vos</center>", "<center>🌍 Para la supervivencia de la humanidad, la ONU gestiono un consejo de jueces cuyo unico trabajo es distinguir entre drones de David Blade y humanos</center>", "<center>Para ello se realiza el <i>Test de Turing Minimalista</i></center>", "<center>📄 El mismo es muy simple pero muy eficaz</center>", "<center>Tanto David Blade como el humano deben responder una sola palabra</center>", "<center>Con ella, el juez determina quien es el robot y quien es el humano</center>", "<center>🧑‍⚖️ Hoy es tu primer dia como juez</center>", "<center>Se te han asignado 10 casos</center>", "<center>Debes determinar a quien matar en funcion de cual de las dos palabras la dijo David Blade</center>", "<center>🦾 ¿Estas listo para salvar a la humanidad? 🌍</center>"],
+		  typeSpeed: 30,
+	    backDelay: 800,
+			onComplete: survey
+		};
+
+		var typed = new Typed('.desc_text', desc_ops);
+	}
+
+	function survey(){
+		wait(1000);
+		window.location.href = "https://us.psytoolkit.org/c/3.3.2/survey?s=7PLrt";
+	}
+
+</script>
+<style type="text/css">
+	body{ 
+	  display: flex;
+	  width: 100vw;
+	  height: 100vh;
+	  align-items: center;
+	  justify-content: center;
+	  margin: 0px;
+	  background: black;
+	  color: #fff;
+	  
+	}
+	.davidblade{
+		cursor: pointer;
+	}
+	#start{
+		display: none;
+		font-size: 36px !important;
+		letter-spacing: 0px !important;
+	}
+	#main{
+		display: flex;
+		width: 100vw;
+		height: 100vh;
+		align-items: center;
+		justify-content: center;
+		margin: 10px;
+		font-size: 96px;
+		font-family: 'Futura', monospace;
+		letter-spacing: -7px;
+	}
+
+	#desc{
+		display: none;
+		width: 100vw;
+		height: 100vh;
+		align-items: center;
+		justify-content: center;
+		margin: 15px;
+		font-size: 36px;
+		font-family: 'Futura', monospace;
+	}
+
+	.icon-3d {
+		padding: 10px;
+		-webkit-animation: icon3d 200ms 10;
+		animation: icon3d 200ms 10;
+		color: #fff;
+	}
+	.icon-3d:hover {
+		-webkit-animation: icon3d 200ms infinite;
+		animation: icon3d 200ms infinite;
+	}
+	.davidblade:hover {
+		-webkit-animation: icon3d_small 300ms infinite;
+		animation: icon3d_small 300ms infinite;
+	}
+
+	@keyframes icon3d {
+		0% {
+			text-shadow: 15px 14px #f44336, -15px -16px white;
+		}
+		25% {
+			text-shadow: -15px -16px #f44336, 15px 14px pink;
+		}
+		50% {
+			text-shadow: 15px -14px #f44336, -18px 14px blue;
+		}
+		75% {
+			text-shadow: -18px -14px #f44336, -15px -14px black;
+		}
+		100% {
+			text-shadow: -15px 0 #f44336, 15px -14px yellow;
+		}
+	}
+
+	@keyframes icon3d_small {
+		0% {
+			text-shadow: 5px 4px #f44336, -5px -6px white;
+		}
+		25% {
+			text-shadow: -5px -6px #f44336, 5px 4px pink;
+		}
+		50% {
+			text-shadow: 5px -4px #f44336, -8px 4px blue;
+		}
+		75% {
+			text-shadow: -8px -4px #f44336, -5px -4px black;
+		}
+		100% {
+			text-shadow: -15px 0 #f44336, 15px -14px yellow;
+		}
+	}
+
+</style>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>🤖 David Blade 🤖</title>
+		<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+	</head>
+<body>
+
+<div onclick="info()" id="desc">
+	<div class="desc_text"><div style="cursor: pointer;">Click para Terminar</div></div>
+</div>	
+<script type="text/javascript">
+	
+	function launchFullScreen(element) {
+		if(element.requestFullScreen) {
+			element.requestFullScreen();
+		} else if(element.mozRequestFullScreen) {
+			element.mozRequestFullScreen();
+		} else if(element.webkitRequestFullScreen) {
+			element.webkitRequestFullScreen();
+		}
+	}
+
+	function getRandomArbitrary(min, max) {
+		return Math.floor(Math.random() * (max - min + 1)) + min;
+	}
+
+	state = false;
+	function info(){
+		if (!state){
+		new Audio("https://David-Blade.ignaciopardo.repl.co/davidblade.mp3").play();
+		launchFullScreen(document.documentElement); // the whole page
+	
+		var desc_ops = {
+		  strings: ["", "<center>🤝 Experimento concluido</center>", "<center>Humanos matados:</center>", "<center>Humanos matados: " + getRandomArbitrary(0, 10) + "</center>", "<center>👋 Me presento...</center>", "<center>👋 Mi nombre es <b>DAVID BLADE ™</b></center>", "<center>🧠 Gracias por enseñarme a pensar mejor como ustedes los humanos 🦾</center>", "<center>🧠 Gracias por enseñarme a pensar mejor como ustedes los humanos 🦾</center><div class=\"davidblade\">🤖</div>"],
+		  typeSpeed: 50,
+	    backDelay: 1000,
+			onComplete: () => {setTimeout(() => { document.querySelector("#desc").classList.add("_off")}, 3000)}
+		};
+
+		var typed = new Typed('.desc_text', desc_ops);
+		state = true;
+		}
+	}
+</script>
+<style type="text/css">
+	body{ 
+	  display: flex;
+	  width: 100vw;
+	  height: 100vh;
+	  align-items: center;
+	  justify-content: center;
+	  margin: 0px;
+	  background: black;
+	  color: #fff;
+	  
+	}
+	.davidblade{
+		font-size: 96px;
+		display: flex;
+	  width: 100vw;
+	  align-items: center;
+	  justify-content: center;
+	}
+
+	#desc{
+		display: flex;
+		width: 100vw;
+		height: 100vh;
+		align-items: center;
+		justify-content: center;
+		margin: 15px;
+		font-size: 36px;
+		font-family: 'Futura', monospace;
+	}
+
+	.icon-3d {
+		padding: 10px;
+		-webkit-animation: icon3d 200ms 10;
+		animation: icon3d 200ms 10;
+		color: #fff;
+	}
+	.icon-3d:hover {
+		-webkit-animation: icon3d 200ms infinite;
+		animation: icon3d 200ms infinite;
+	}
+	.davidblade:hover {
+		-webkit-animation: icon3d_small 300ms infinite;
+		animation: icon3d_small 300ms infinite;
+	}
+
+	._off {
+		animation: shutdown 400ms linear;
+		animation-fill-mode: forwards;
+	}
+
+   _off:after{
+		animation: shutdown-opa 400ms linear;
+		animation-fill-mode: forwards;
+	}
+
+	@keyframes icon3d {
+		0% {
+			text-shadow: 15px 14px #f44336, -15px -16px white;
+		}
+		25% {
+			text-shadow: -15px -16px #f44336, 15px 14px pink;
+		}
+		50% {
+			text-shadow: 15px -14px #f44336, -18px 14px blue;
+		}
+		75% {
+			text-shadow: -18px -14px #f44336, -15px -14px black;
+		}
+		100% {
+			text-shadow: -15px 0 #f44336, 15px -14px yellow;
+		}
+	}
+
+	@keyframes icon3d_small {
+		0% {
+			text-shadow: 5px 4px #f44336, -5px -6px white;
+		}
+		25% {
+			text-shadow: -5px -6px #f44336, 5px 4px pink;
+		}
+		50% {
+			text-shadow: 5px -4px #f44336, -8px 4px blue;
+		}
+		75% {
+			text-shadow: -8px -4px #f44336, -5px -4px black;
+		}
+		100% {
+			text-shadow: -15px 0 #f44336, 15px -14px yellow;
+		}
+	}
+
+	@keyframes shutdown{
+		0%{
+				transform: scale3d(1, 1, 1);
+		}
+		20%{
+				transform: scale3d(1, 1.6, 1);
+		}
+		50%{
+				transform: scale3d(1, .005, 1);
+		}
+		100%{
+				transform: scale3d(0, 0, 1);
+		}			
+	}
+							
+
+	@keyframes shutdown-opa{
+		0%{
+				opacity: 0;
+		}		
+		50%{
+				opacity: 1;
+		}
+		100%{
+				opacity: 1;
+		}			
+	}
+
+
+</style>
+</body>
+</html>
