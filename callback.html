@@ -7,9 +7,12 @@
 		<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 	</head>
 <body>
-
+<div class="info"><img src="assets/web/question.png"></div>
 <div onclick="info()" id="desc">
 	<div class="desc_text"><div style="cursor: pointer;">Click para Terminar</div></div>
+</div>	
+<div id="about" style="display: none;">
+	<div  style="cursor: pointer;" class="about_text icon-3d-small"></div>
 </div>	
 <script type="text/javascript">
 	
@@ -34,18 +37,51 @@
 		launchFullScreen(document.documentElement); // the whole page
 	
 		var desc_ops = {
-		  strings: ["", "<center>🤝 Experimento concluido</center>", "<center>Humanos matados:</center>", "<center>Humanos matados: " + getRandomArbitrary(0, 10) + "</center>", "<center>👋 Me presento...</center>", "<center>👋 Mi nombre es <b>DAVID BLADE ™</b></center>", "<center>🧠 Gracias por enseñarme a pensar mejor como ustedes los humanos 🦾</center>", "<center>🧠 Gracias por enseñarme a pensar mejor como ustedes los humanos 🦾</center><div class=\"davidblade\">🤖</div>"],
+		  strings: ["", "<center>🤝 Experimento concluido</center>", "<center>Humanos matados:</center>", "<center>Humanos matados: " + getRandomArbitrary(4, 10) + "</center>", "<center>👋 Me presento...</center>", "<center>👋 Mi nombre es <b>DAVID BLADE ™</b></center>", "<center>🧠 Gracias por enseñarme a pensar mejor como ustedes los humanos 🦾</center>", "<center>🧠 Gracias por enseñarme a pensar mejor como ustedes los humanos 🦾</center><div class=\"davidblade\">🤖</div>"],
 		  typeSpeed: 50,
 	    backDelay: 1000,
-			onComplete: () => {setTimeout(() => { document.querySelector("#desc").classList.add("_off")}, 3000)}
+			onComplete: outro
 		};
 
 		var typed = new Typed('.desc_text', desc_ops);
 		state = true;
 		}
+
 	}
+	function outro(){
+		setTimeout(() => { tvOff(); }, 3000);
+	}
+	function tvOff(){
+		document.querySelector("#desc").classList.add("_off");
+		setTimeout(() => { about(); }, 3000);
+	}
+
+	function about(){
+		document.querySelector("#desc").style.display = "none";
+		document.querySelector("#about").style.display = "flex";
+		var desc_ops = {
+		  strings: ["", "<center>Acerca del experimento</center>"],
+		  typeSpeed: 50,
+	    backDelay: 1000,
+		};
+
+		var typed = new Typed('.about_text', desc_ops);
+	}
+
 </script>
 <style type="text/css">
+
+	.info {
+		font-family: "SF Pro Text" !important;
+		position: absolute;
+		right: 5vw;
+		top: 5vh;
+		width: 20px;
+		height: 20px;
+		cursor: pointer;
+		display: none;
+	}
+
 	body{ 
 	  display: flex;
 	  width: 100vw;
@@ -76,6 +112,17 @@
 		font-family: 'Futura', monospace;
 	}
 
+	#about{
+		display: flex;
+		width: 100vw;
+		height: 100vh;
+		align-items: center;
+		justify-content: center;
+		margin: 15px;
+		font-size: 36px;
+		font-family: 'Futura', monospace;
+	}
+
 	.icon-3d {
 		padding: 10px;
 		-webkit-animation: icon3d 200ms 10;
@@ -86,6 +133,14 @@
 		-webkit-animation: icon3d 200ms infinite;
 		animation: icon3d 200ms infinite;
 	}
+
+	.icon-3d-small {
+		padding: 10px;
+		-webkit-animation: icon3d_small 200ms 30;
+		animation: icon3d_small 200ms 30;
+		color: #fff;
+	}
+
 	.davidblade:hover {
 		-webkit-animation: icon3d_small 300ms infinite;
 		animation: icon3d_small 300ms infinite;
