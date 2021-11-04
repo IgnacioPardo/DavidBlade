@@ -40,12 +40,13 @@
 
 	function start(){
 		if (!state){
-		new Audio("https://David-Blade.ignaciopardo.repl.co/davidblade.mp3").play();
-		launchFullScreen(document.documentElement); // the whole page
-	
-		document.querySelector(".davidblade").classList.add("icon-3d");
-		setTimeout(() => { title(); }, 1700);
-		state = true;
+			new Audio("https://David-Blade.ignaciopardo.repl.co/davidblade.mp3").play();
+			launchFullScreen(document.documentElement); // the whole page
+			document.body.classList.add("hide_cursor");
+
+			document.querySelector(".davidblade").classList.add("icon-3d");
+			setTimeout(() => { title(); }, 1700);
+			state = true;
 		}
 	}
 
@@ -176,6 +177,10 @@
 		100% {
 			text-shadow: -15px 0 #f44336, 15px -14px yellow;
 		}
+	}
+
+	.hide_cursor{
+		cursor: url('MOUSE.png'), auto;	
 	}
 
 </style>
