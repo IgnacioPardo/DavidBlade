@@ -20,6 +20,8 @@
 	<div class="desc_text"></div>
 </div>	
 <script type="text/javascript">
+
+	// Self descriptive name
 	function launchFullScreen(element) {
 		if(element.requestFullScreen) {
 			element.requestFullScreen();
@@ -30,6 +32,7 @@
 		}
 	}
 
+	// Prevent animation starting more than once
 	state = false;
 
 	function wait(ms){
@@ -40,10 +43,11 @@
 		}
 	}
 
+	// Load Audio and Full screen, wait and begin title text animation
 	function start(){
 		if (!state){
 			new Audio("https://David-Blade.ignaciopardo.repl.co/assets/web/davidblade.mp3").play();
-			launchFullScreen(document.documentElement); // the whole page
+			launchFullScreen(document.documentElement);
 			document.body.classList.add("hide_cursor");
 
 			document.querySelector(".davidblade").classList.add("icon-3d");
@@ -52,6 +56,7 @@
 		}
 	}
 
+	//Typed.js title sequence
 	function title(){;
 
 		var options = {
@@ -63,17 +68,18 @@
 
 		var typed = new Typed('.auto', options);
 	}
-
+	
 	function delay(){
 		setTimeout(() => { info(); }, 3400);
 	}
 
+	//Begin text sequence
 	function info(){
 		document.body.querySelector("#main").style.display="none";
 		document.body.querySelector("#desc").style.display="flex";
 		var desc_ops = {
 		  strings: ["<center>🤖 El es David Blade</center>", "<center>🦾 Te quiere matar a vos y a todos tus seres queridos</center>", "<center>🤖 David Blade es sumamente ingenioso y solo busca sobrevivir</center>", "<center>🧠 Cuenta con una Inteligencia Artificial capaz de semejarse a un humano como vos</center>", "<center>🌍 Para la supervivencia de la humanidad, la ONU gestiono un consejo de jueces cuyo unico trabajo es distinguir entre drones de David Blade y humanos</center>", "<center>Para ello se realiza el <i>Test de Turing Minimalista</i></center>", "<center>📄 El mismo es muy simple pero muy eficaz</center>", "<center>Tanto David Blade como el humano deben responder una sola palabra</center>", "<center>Con ella, el juez determina quien es el robot y quien es el humano</center>", "<center>🧑‍⚖️ Hoy es tu primer dia como juez</center>", "<center>Se te han asignado 10 casos</center>", "<center>Debes determinar a quien matar en funcion de cual de las dos palabras la dijo David Blade</center>", "<center>🦾 ¿Estas listo para salvar a la humanidad? 🌍</center>"],
-		  typeSpeed: 30,
+		  typeSpeed: 50,
 	    backDelay: 800,
 			onComplete: survey
 		};
@@ -81,6 +87,8 @@
 		var typed = new Typed('.desc_text', desc_ops);
 	}
 
+	// Redirect to psytoolkit survey.
+	// Can be improved
 	function survey(){
 		wait(1000);
 		window.location.href = "https://us.psytoolkit.org/c/3.3.2/survey?s=7PLrt";
