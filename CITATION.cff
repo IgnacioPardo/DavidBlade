@@ -1,0 +1,60 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: >-
+  DAVID BLADE - Un estudio sobre la percepción social
+  de las capacidades lingüisticas y racionales de la
+  Inteligencia Artificial General
+message: >-
+  Please cite this software using the metadata from
+  'preferred-citation'.
+type: software
+authors:
+  - given-names: Ignacio
+    family-names: Pardo
+    email: nacho.ignaciopardo@gmail.com
+    affiliation: Universidad Torcuato Di Tella
+    orcid: 'https://orcid.org/0000-0001-8837-8099'
+  - given-names: Luca
+    family-names: Mazzarello
+    affiliation: Universidad Torcuato Di Tella
+  - given-names: Camila
+    family-names: Migdal
+    affiliation: Universidad Torcuato Di Tella
+  - given-names: Azul
+    family-names: Noguera
+    affiliation: Universidad Torcuato Di Tella
+repository-code: 'https://github.com/IgnacioPardo/DavidBlade'
+url: 'https://ignaciopardo.github.io/DavidBlade/'
+repository: 'https://github.com/IgnacioPardo/DavidBlade'
+abstract: >
+  El Test de Turing Minimalista McCoy, J. P., &
+  Ullman, T. D. (2018),  se lleva a cabo de la
+  siguiente manera. Un juez es presentado dos
+  palabras, a partir de ellas, determina cuál la dijo
+  una AI/Robot y cuál la dijo un humano. En función a
+  su decisión, se sentencia a muerte al robot.
+
+  El objetivo del experimento a desarrollar es
+  determinar la categoría más “robótica” entre dos.
+  Definimos una categoría como más “robótica” que la
+  otra si frente al Test de Turing Minimalista es más
+  probable que la haya dicho el Robot que el Humano. 
+  Esto lo obtenemos a partir de llevar a cabo
+  “partidos” entre palabras de dos categorías
+  distintas. Un partido es la evaluación de qué
+  palabra perteneciente a una categoría dijo el robot
+  frente a otra. El global de partidos ganados
+  determina que una categoría es más “robótica” que
+  otra. 
+keywords:
+  - AI
+  - Neuroscience
+  - Linguistics
+  - Statistics
+  - Jupyter Notebook
+  - Python
+  - Experimental Psychology
+  - Psytoolkit
+license: MIT
